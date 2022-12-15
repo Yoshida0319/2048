@@ -1,0 +1,291 @@
+body{
+    background-color: skyblue;
+}
+.bady{
+    border:5px solid gray;
+    border-radius: 5px;
+    position:absolute;
+    width: 400px;
+    height:400px;
+    left:500px;
+    top:150px;
+}
+.a{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:0px;
+    top:0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.b{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:100px;
+    top:0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.c{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:200px;
+    top:0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.d{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:300px;
+    top:0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.e{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:0px;
+    top:100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.f{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:100px;
+    top:100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.g{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:200px;
+    top:100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.h{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:300px;
+    top:100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.i{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:0px;
+    top:200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.j{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:100px;
+    top:200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.k{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:200px;
+    top:200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.l{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:300px;
+    top:200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.m{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:0px;
+    top:300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.n{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:100px;
+    top:300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.o{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:200px;
+    top:300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.p{
+    border:3px solid gray;
+    border-radius: 3px;
+    position:absolute;
+    width: 95px;
+    height:95px;
+    left:300px;
+    top:300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: silver;
+}
+.result{
+    position:absolute;
+    width: 400px;
+    height:400px;
+    top:70px;
+    text-align: center;
+    font-size: 50px;
+}
+.button{
+    position:absolute;
+    background-color: hsl(210,75%,50%);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 12px;
+    left:810px;
+    top:90px;
+    width: 100px;
+    height:40px;
+}
