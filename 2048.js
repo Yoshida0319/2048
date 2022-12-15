@@ -68,7 +68,7 @@ function inner(a,nannya){
         }else if(a[inn]===512){
             eleme.style.backgroundColor='hsl(1, 73%, 61%)';
         }else if(a[inn]===1024){
-            eleme.style.backgroundColor='hsl(63, 36%, 71%)';
+            eleme.style.backgroundColor='hsl(63, 36%, 50%)';
         }else if(a[inn]===2048){
             eleme.style.backgroundColor='hsl(51,100%,50%)';
         }else if(a[inn]>=4096){
