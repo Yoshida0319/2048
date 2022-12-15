@@ -34,8 +34,7 @@ const ppp=document.getElementById('pp')
 const butto=document.getElementById('button')
 const ikerukana=[it,ni,sa,yo,go,rok,nan,hat,ky,zy,zyuit,zyun,zyusa,zyuyo,zyug,zyurok];
 const ikuzo=[aaa,bbb,ccc,ddd,eee,fff,ggg,hhh,iii,jjj,kkk,lll,mmm,nnn,ooo,ppp]
-//var a=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-var a=[0,0,8,4,4096,1024,512,256,128,64,32,16,8,4,2,2048];
+var a=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 randam(a,1);
 function inner(a,nannya){
     for (let inn = 0; inn < ikerukana.length; inn++) {
