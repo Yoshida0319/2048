@@ -1,48 +1,64 @@
-const resultarea=document.getElementById('result')
-const it=document.getElementById('aiti')
-const ni=document.getElementById('ani')
-const sa=document.getElementById('asan')
-const yo=document.getElementById('ayon')
-const go=document.getElementById('ago')
-const rok=document.getElementById('aroku')
-const nan=document.getElementById('anana')
-const hat=document.getElementById('ahati')
-const ky=document.getElementById('akyu')
-const zy=document.getElementById('azyu')
-const zyuit=document.getElementById('azyuiti')
-const zyun=document.getElementById('azyuni')
-const zyusa=document.getElementById('azyusan')
-const zyuyo=document.getElementById('azyuyon')
-const zyug=document.getElementById('azyugo')
-const zyurok=document.getElementById('azyuroku')
-const aaa=document.getElementById('aa')
-const bbb=document.getElementById('bb')
-const ccc=document.getElementById('cc')
-const ddd=document.getElementById('dd')
-const eee=document.getElementById('ee')
-const fff=document.getElementById('ff')
-const ggg=document.getElementById('gg')
-const hhh=document.getElementById('hh')
-const iii=document.getElementById('ii')
-const jjj=document.getElementById('jj')
-const kkk=document.getElementById('kk')
-const lll=document.getElementById('ll')
-const mmm=document.getElementById('mm')
-const nnn=document.getElementById('nn')
-const ooo=document.getElementById('oo')
-const ppp=document.getElementById('pp')
-const butto=document.getElementById('button')
+const resultarea=document.getElementById('result');
+const resulta=document.getElementById('resulta');
+const bady=document.getElementById('bady');
+const it=document.getElementById('aiti');
+const ni=document.getElementById('ani');
+const sa=document.getElementById('asan');
+const yo=document.getElementById('ayon');
+const go=document.getElementById('ago');
+const rok=document.getElementById('aroku');
+const nan=document.getElementById('anana');
+const hat=document.getElementById('ahati');
+const ky=document.getElementById('akyu');
+const zy=document.getElementById('azyu');
+const zyuit=document.getElementById('azyuiti');
+const zyun=document.getElementById('azyuni');
+const zyusa=document.getElementById('azyusan');
+const zyuyo=document.getElementById('azyuyon');
+const zyug=document.getElementById('azyugo');
+const zyurok=document.getElementById('azyuroku');
+const aaa=document.getElementById('aa');
+const bbb=document.getElementById('bb');
+const ccc=document.getElementById('cc');
+const ddd=document.getElementById('dd');
+const eee=document.getElementById('ee');
+const fff=document.getElementById('ff');
+const ggg=document.getElementById('gg');
+const hhh=document.getElementById('hh');
+const iii=document.getElementById('ii');
+const jjj=document.getElementById('jj');
+const kkk=document.getElementById('kk');
+const lll=document.getElementById('ll');
+const mmm=document.getElementById('mm');
+const nnn=document.getElementById('nn');
+const ooo=document.getElementById('oo');
+const ppp=document.getElementById('pp');
+const sukoa=document.getElementById('sukoa');
+const best=document.getElementById('best');
+const butto=document.getElementById('button');
+const kakusi=document.getElementById('korekiri');
 const ikerukana=[it,ni,sa,yo,go,rok,nan,hat,ky,zy,zyuit,zyun,zyusa,zyuyo,zyug,zyurok];
 const ikuzo=[aaa,bbb,ccc,ddd,eee,fff,ggg,hhh,iii,jjj,kkk,lll,mmm,nnn,ooo,ppp]
 var a=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var sutta=0;
+var korezya=0;
+var nannya=0;
+var nannya=0;
 randam(a,1);
-function inner(a,nannya){
+function inner(a){
+    resultarea.innerText="";
+    resulta.innerText="";
+    sukoa.innerText=sutta;
+    if(sutta>korezya){
+        korezya=sutta;
+    }
+    best.innerText=korezya;
     for (let inn = 0; inn < ikerukana.length; inn++) {
         const element = ikerukana[inn];
         const eleme=ikuzo[inn];
         element.innerText="";
-        resultarea.innerText="";
         eleme.style.borderColor='hsl(0,0%,50%)';
+        element.style.fontSize='35px';
         if(a[inn]!==0){
             element.style.color='black';
             element.innerText=a[inn];
@@ -80,96 +96,179 @@ function inner(a,nannya){
             }
         }
         if(nannya===1){
+            sutta=0;
             resultarea.innerText="Game Over!";
+            eleme.style.backgroundColor='hsl(0,0%,85%)';
+            element.style.color='hsl(0,0%,75%)';
+            eleme.style.borderColor='hsl(0,0%,80%)';
+        }else if(nannya===3){
+            resultarea.innerText="Clear!";
+            resulta.innerText='クリックしてください';
             eleme.style.backgroundColor='hsl(0,0%,85%)';
             element.style.color='hsl(0,0%,75%)';
             eleme.style.borderColor='hsl(0,0%,80%)';
         }
     }
 }
-butto.onclick=()=>{
-    for (let anara = 0; anara < a.length; anara++) {
-        a.splice(anara,1,0);
+kakusi.onclick=()=>{
+    if(nannya===3){
+        nannya=2;
+        inner(a);
+        return;
     }
+}
+butto.onclick=()=>{
+    nannya=0;
+    sutta=0;
+    a=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     randam(a,1);
 }
+window.addEventListener("load", function(e){
+    window.addEventListener('keydown', function(e){
+        var code = e.Code;
+        switch(code) {
+            case 37: // ←
+            case 38: // ↑
+            case 39: // →
+            case 40: // ↓
+            e.preventDefault();
+    }
+    });
+    let startX;
+	let startY;
+	let moveX;
+	let moveY;
+    bady.addEventListener('touchstart',function(e) {
+        if(nannya===3){
+            nannya=2;
+            inner(a);
+        }
+        e.preventDefault();
+        startX = e.changedTouches[0].pageX;
+    	startY = e.changedTouches[0].pageY;
+        moveX = e.changedTouches[0].pageX;
+    	moveY = e.changedTouches[0].pageY;
+    });
+    bady.addEventListener('touchmove',function(e) {
+        e.preventDefault();
+        moveX = e.changedTouches[0].pageX;
+    	moveY = e.changedTouches[0].pageY;
+    });
+    bady.addEventListener("touchend", function(e) {
+        if (startY > moveY +30 && Math.abs(startY-moveY) > Math.abs(startX-moveX) *2) {
+            ueya(a,0,1);
+            return;
+        }
+        else if (startY +30 < moveY && Math.abs(startY-moveY) > Math.abs(startX-moveX) *2) {
+            sitaya(a,0,1);
+            return;
+        }else if (startX +30 < moveX && Math.abs(startX-moveX) > Math.abs(startY-moveY) *2) {
+            migiya(a,0,1);
+            return;
+        }else if (startX > moveX +30 && Math.abs(startX-moveX) > Math.abs(startY-moveY) *2) {
+            hidariya(a,0,1);
+            return;
+        }
+    });
+});
 document.onkeydown=function(event){
-    if(event.key==='ArrowUp' || event.key==='W' || event.key==='w'){
-        ueya(a,0,1);
+    if(nannya===1){
         return;
-    }else if(event.key==='ArrowDown' || event.key==='S' || event.key==='s'){
-        sitaya(a,0,1);
-        return;
-    }else if(event.key==='ArrowRight' || event.key==='D' || event.key==='d'){
-        migiya(a,0,1);
-        return;
-    }else if(event.key==='ArrowLeft' || event.key==='A' || event.key==='a'){
-        hidariya(a,0,1);
+    }else if(nannya===3){
+        nannya=2;
+        inner(a);
         return;
     }else{
-        return;
+        if(event.key==='ArrowUp' || event.key==='W' || event.key==='w'){
+            ueya(a,0,1);
+            return;
+        }else if(event.key==='ArrowDown' || event.key==='S' || event.key==='s'){
+            sitaya(a,0,1);
+            return;
+        }else if(event.key==='ArrowRight' || event.key==='D' || event.key==='d'){
+            migiya(a,0,1);
+            return;
+        }else if(event.key==='ArrowLeft' || event.key==='A' || event.key==='a'){
+            hidariya(a,0,1);
+            return;
+        }else{
+            return;
+        }
     }
+    
 }
 function ueya(a,korena,korekore){
     let yossya=0;
     if(korekore===2){
         if(a[0]===a[4] && a[4]!==0){
             let iyaya=a[0]+a[4];
+            sutta=sutta+iyaya;
             kittyae(0,4,iyaya,a);
             yossya++;
         }
         if(a[1]===a[5] && a[5]!==0){
             let iyaya=a[1]+a[5];
+            sutta=sutta+iyaya;
             kittyae(1,5,iyaya,a);
             yossya++;
         }
         if(a[2]===a[6] && a[6]!==0){
             let iyaya=a[2]+a[6];
+            sutta=sutta+iyaya;
             kittyae(2,6,iyaya,a);
             yossya++;
         }
         if(a[3]===a[7] && a[7]!==0){
             let iyaya=a[3]+a[7];
+            sutta=sutta+iyaya;
             kittyae(3,7,iyaya,a);
             yossya++;
         }
         if(a[4]===a[8] && a[8]!==0){
             let iyaya=a[4]+a[8];
+            sutta=sutta+iyaya;
             kittyae(4,8,iyaya,a);
             yossya++;
         }
         if(a[5]===a[9] && a[9]!==0){
             let iyaya=a[5]+a[9];
+            sutta=sutta+iyaya;
             kittyae(5,9,iyaya,a);
             yossya++;
         }
         if(a[6]===a[10] && a[10]!==0){
             let iyaya=a[6]+a[10];
+            sutta=sutta+iyaya;
             kittyae(6,10,iyaya,a);
             yossya++;
         }
         if(a[7]===a[11] && a[11]!==0){
             let iyaya=a[7]+a[11];
+            sutta=sutta+iyaya;
             kittyae(7,11,iyaya,a);
             yossya++;
         }
         if(a[8]===a[12] && a[12]!==0){
             let iyaya=a[8]+a[12];
+            sutta=sutta+iyaya;
             kittyae(8,12,iyaya,a);
             yossya++;
         }
         if(a[9]===a[13] && a[13]!==0){
             let iyaya=a[9]+a[13];
+            sutta=sutta+iyaya;
             kittyae(9,13,iyaya,a);
             yossya++;
         }
         if(a[10]===a[14] && a[14]!==0){
             let iyaya=a[10]+a[14];
+            sutta=sutta+iyaya;
             kittyae(10,14,iyaya,a);
             yossya++;
         }
         if(a[11]===a[15] && a[15]!==0){
             let iyaya=a[11]+a[15];
+            sutta=sutta+iyaya;
             kittyae(11,15,iyaya,a);
             yossya++;
         }
@@ -259,61 +358,73 @@ function sitaya(a,korena,korekore){
     if(korekore===2){
         if(a[8]===a[12] && a[8]!==0){
             let iyaya=a[8]+a[12];
+            sutta=sutta+iyaya;
             kittyae(12,8,iyaya,a);
             yossya++;
         }
         if(a[9]===a[13] && a[9]!==0){
             let iyaya=a[9]+a[13];
+            sutta=sutta+iyaya;
             kittyae(13,9,iyaya,a);
             yossya++;
         }
         if(a[10]===a[14] && a[10]!==0){
             let iyaya=a[10]+a[14];
+            sutta=sutta+iyaya;
             kittyae(14,10,iyaya,a);
             yossya++;
         }
         if(a[11]===a[15] && a[11]!==0){
             let iyaya=a[11]+a[15];
+            sutta=sutta+iyaya;
             kittyae(15,11,iyaya,a);
             yossya++;
         }
         if(a[4]===a[8] && a[4]!==0){
             let iyaya=a[4]+a[8];
+            sutta=sutta+iyaya;
             kittyae(8,4,iyaya,a);
             yossya++;
         }
         if(a[5]===a[9] && a[5]!==0){
             let iyaya=a[5]+a[9];
+            sutta=sutta+iyaya;
             kittyae(9,5,iyaya,a);
             yossya++;
         }
         if(a[6]===a[10] && a[6]!==0){
             let iyaya=a[6]+a[10];
+            sutta=sutta+iyaya;
             kittyae(10,6,iyaya,a);
             yossya++;
         }
         if(a[7]===a[11] && a[7]!==0){
             let iyaya=a[7]+a[11];
+            sutta=sutta+iyaya;
             kittyae(11,7,iyaya,a);
             yossya++;
         }
         if(a[0]===a[4] && a[0]!==0){
             let iyaya=a[0]+a[4];
+            sutta=sutta+iyaya;
             kittyae(4,0,iyaya,a);
             yossya++;
         }
         if(a[1]===a[5] && a[1]!==0){
             let iyaya=a[1]+a[5];
+            sutta=sutta+iyaya;
             kittyae(5,1,iyaya,a);
             yossya++;
         }
         if(a[2]===a[6] && a[2]!==0){
             let iyaya=a[2]+a[6];
+            sutta=sutta+iyaya;
             kittyae(6,2,iyaya,a);
             yossya++;
         }
         if(a[3]===a[7] && a[3]!==0){
             let iyaya=a[3]+a[7];
+            sutta=sutta+iyaya;
             kittyae(7,3,iyaya,a);
             yossya++;
         }
@@ -403,61 +514,73 @@ function migiya(a,korena,korekore){
     if(korekore===2){
         if(a[2]===a[3] && a[2]!==0){
             let iyaya=a[2]+a[3];
+            sutta=sutta+iyaya;
             kittyae(3,2,iyaya,a);
             yossya++;
         }
         if(a[6]===a[7] && a[6]!==0){
             let iyaya=a[6]+a[7];
+            sutta=sutta+iyaya;
             kittyae(7,6,iyaya,a);
             yossya++;
         }
         if(a[10]===a[11] && a[10]!==0){
             let iyaya=a[10]+a[11];
+            sutta=sutta+iyaya;
             kittyae(11,10,iyaya,a);
             yossya++;
         }
         if(a[14]===a[15] && a[14]!==0){
             let iyaya=a[14]+a[15];
+            sutta=sutta+iyaya;
             kittyae(15,14,iyaya,a);
             yossya++;
         }
         if(a[1]===a[2] && a[1]!==0){
             let iyaya=a[1]+a[2];
+            sutta=sutta+iyaya;
             kittyae(2,1,iyaya,a);
             yossya++;
         }
         if(a[5]===a[6] && a[5]!==0){
             let iyaya=a[5]+a[6];
+            sutta=sutta+iyaya;
             kittyae(6,5,iyaya,a);
             yossya++;
         }
         if(a[9]===a[10] && a[9]!==0){
             let iyaya=a[9]+a[10];
+            sutta=sutta+iyaya;
             kittyae(10,9,iyaya,a);
             yossya++;
         }
         if(a[13]===a[14] && a[13]!==0){
             let iyaya=a[13]+a[14];
+            sutta=sutta+iyaya;
             kittyae(14,13,iyaya,a);
             yossya++;
         }
         if(a[0]===a[1] && a[0]!==0){
             let iyaya=a[0]+a[1];
+            sutta=sutta+iyaya;
             kittyae(1,0,iyaya,a);
             yossya++;
         }
         if(a[4]===a[5] && a[4]!==0){
             let iyaya=a[4]+a[5];
+            sutta=sutta+iyaya;
             kittyae(5,4,iyaya,a);
             yossya++;
         }
         if(a[8]===a[9] && a[8]!==0){
             let iyaya=a[8]+a[9];
+            sutta=sutta+iyaya;
             kittyae(9,8,iyaya,a);
             yossya++;
         }
         if(a[12]===a[13] && a[12]!==0){
             let iyaya=a[12]+a[13];
+            sutta=sutta+iyaya;
             kittyae(13,12,iyaya,a);
             yossya++;
         }
@@ -547,61 +670,73 @@ function hidariya(a,korena,korekore){
     if(korekore===2){
         if(a[0]===a[1] && a[1]!==0){
             let iyaya=a[0]+a[1];
+            sutta=sutta+iyaya;
             kittyae(0,1,iyaya,a);
             yossya++;
         }
         if(a[4]===a[5] && a[5]!==0){
             let iyaya=a[4]+a[5];
+            sutta=sutta+iyaya;
             kittyae(4,5,iyaya,a);
             yossya++;
         }
         if(a[8]===a[9] && a[9]!==0){
             let iyaya=a[8]+a[9];
+            sutta=sutta+iyaya;
             kittyae(8,9,iyaya,a);
             yossya++;
         }
         if(a[12]===a[13] && a[13]!==0){
             let iyaya=a[12]+a[13];
+            sutta=sutta+iyaya;
             kittyae(12,13,iyaya,a);
             yossya++;
         }
         if(a[1]===a[2] && a[2]!==0){
             let iyaya=a[1]+a[2];
+            sutta=sutta+iyaya;
             kittyae(1,2,iyaya,a);
             yossya++;
         }
         if(a[5]===a[6] && a[6]!==0){
             let iyaya=a[5]+a[6];
+            sutta=sutta+iyaya;
             kittyae(5,6,iyaya,a);
             yossya++;
         }
         if(a[9]===a[10] && a[10]!==0){
             let iyaya=a[9]+a[10];
+            sutta=sutta+iyaya;
             kittyae(9,10,iyaya,a);
             yossya++;
         }
         if(a[13]===a[14] && a[14]!==0){
             let iyaya=a[13]+a[14];
+            sutta=sutta+iyaya;
             kittyae(13,14,iyaya,a);
             yossya++;
         }
         if(a[2]===a[3] && a[3]!==0){
             let iyaya=a[2]+a[3];
+            sutta=sutta+iyaya;
             kittyae(2,3,iyaya,a);
             yossya++;
         }
         if(a[6]===a[7] && a[7]!==0){
             let iyaya=a[6]+a[7];
+            sutta=sutta+iyaya;
             kittyae(6,7,iyaya,a);
             yossya++;
         }
         if(a[10]===a[11] && a[11]!==0){
             let iyaya=a[10]+a[11];
+            sutta=sutta+iyaya;
             kittyae(10,11,iyaya,a);
             yossya++;
         }
         if(a[14]===a[15] && a[15]!==0){
             let iyaya=a[14]+a[15];
+            sutta=sutta+iyaya;
             kittyae(14,15,iyaya,a);
             yossya++;
         }
@@ -710,21 +845,29 @@ function randam(a,korena) {
 }
 function hanndann(a){
     let tukareta=0;
-    for (let i = 0; i < 15; i++) {
-        if(i!==3 && i!==7 && i!==11){
+    for (let i = 0; i < 16; i++) {
+        if(a[i]===2048){
+            if(nannya===0){
+                nannya=3;
+            }
+        }
+        if(i!==3 && i!==7 && i!==11 && i!==15){
             if(a[i]===a[i+1] || a[i]===0 || a[i+1]===0){
                 tukareta++;
             }
         }
-        if(i!==12 && i!==13 && i!==14){
+        if(i!==12 && i!==13 && i!==14 && i!==15){
             if(a[i]===a[i+4] || a[i]===0){
                 tukareta++;
             }
         }
     }
     if(tukareta===0){
-        inner(a,1);
-    }else{
-        inner(a,0);
+        nannya=1;
+    }else if(nannya===0){
+        nannya=0;
+    }else if(nannya===2){
+        nannya=2;
     }
+    inner(a);
 }
