@@ -261,6 +261,9 @@ body{
     text-align: center;
     font-size: 50px;
 }
+.resulta{
+    text-align: center;
+}
 .button{
     background-color: hsl(210,75%,50%);
     outline: none;
